@@ -35,5 +35,21 @@ public class EmployeeService{
 		}
 		return result;
 	}
+
+	public String login(Employee e) {
+		String result="";
 	
+		Employee obj = null;
+		Optional<Employee> optional = employeeRepo.findById(e.getEmployeeId());
+		if(e.getPassword() == optional.password)
+		{
+			result="Login Successful!";
+			
+		}
+		else
+		{
+			result="Login Failed!";
+		}
+		return result;
+	}
 }
