@@ -33,6 +33,20 @@ public class EmployeeController{
 		
 		return result;
 	}
-	
+
+	@PostMapping("/login")
+	public String login(@RequestBody Employee e) {
+		String result = "";
+		result = employeeService.login(e);
+		System.out.println(e.getEmployeeId());
+	/*	if(obj != null) {
+			result = "Login Successful!";
+		}
+		else {
+			result = "Login Failed!";
+		}*/
+		
+		return result;
+	}
 }
 
